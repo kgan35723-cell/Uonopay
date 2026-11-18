@@ -31,7 +31,7 @@ console.log(req.body);
         }
 
         // Telegram par bheje jaane wale message ka format
-        const messageText = `OKPAYk NOTIFICATION
+        const messageText = `Uonopay NOTIFICATION
 
 Support Issue: ${issue}
 📱 Mobile Number: ${phone}

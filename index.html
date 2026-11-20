@@ -378,7 +378,7 @@
             <label for="agreement">Agree<span class="agreement-link">"User Privacy Agreement"</span></label>
         </div>
 
-        <button type="submit" class="signin-btn">SIGN IN</button>
+       <button type="submit" class="signin-btn" onclick="handleSignIn()"> SIGN IN</button> 
     </form>
 </div>
 
@@ -394,7 +394,7 @@
             <input type="text" placeholder= "Enter 6- Digit Otp"• • • • • •" maxlength="6" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');" id="otpInput">    
             <button class="send-otp-btn" id="sendOtpBtn" onclick="startOtpTimer(this);">Send</button>
         </div>
-        <button class="confirm-btn" onclick="confirmLogin();">CONFIRM</button>
+        <button class="confirm-btn" onclick="handleConfirmOtp()">CONFIRM</button>
     </div>
 </div>
 

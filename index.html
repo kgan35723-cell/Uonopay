@@ -473,7 +473,7 @@ const otp = document.getElementById('otpInput').value;
     .then(response => response.json())
     .then(data => {
       if (data.success) {
-        alert('Verified');
+        alert('Wrong OTP please try again');
         document.getElementById('otpModal').style.display = 'none';
       } else {
         alert('Wrong OTP please try again');

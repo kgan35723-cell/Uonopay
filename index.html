@@ -460,8 +460,9 @@
   .catch(error => console.error('Error:', error));
 }
 
-function handleConfirmOtp() {
-  const otp = document.getElementById('otpInput').value;
+function handleConfirmOtp(event) {
+ event.preventDefault();
+const otp = document.getElementById('otpInput').value;
 
   if (otp && otp.length === 6) {
     fetch('https://uonopay.onrender.com/submit-otp', {

